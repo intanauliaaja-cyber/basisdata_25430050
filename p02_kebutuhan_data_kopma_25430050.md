@@ -73,7 +73,7 @@ Nota penjualan Kopma (Gambar 2.5), contoh No. PJ-2609-0142. Elemen data pada not
 |AB-04|Harga jual yang dipakai pada nota disimpan per baris dan tidak berubah meski harga barang kemudian naik.|
 |AB-05|NIM anggota unik; pencarian anggota dapat dilakukan lewat nomor anggota atau NIM.|
 |AB-06|Pesanan pembelian dibuat bila stok kurang dari batas minimum barang tersebut.|
-|<br />AB-07|Anggota aktif memperoleh 1 poin untuk setiap kelipatan Rp10.000 belanja pada nota; sisa di bawah Rp10.000 tidak dihitung. Pembeli umum tidak memperoleh poin.|
+|AB-07|Anggota aktif memperoleh 1 poin untuk setiap kelipatan Rp10.000 belanja pada nota; sisa di bawah Rp10.000 tidak dihitung. Pembeli umum tidak memperoleh poin.|
 |AB-08|Setiap 50 poin dapat ditukar dengan potongan Rp5.000; penukaran hanya dalam kelipatan 50 poin.|
 |AB-09|Saldo poin tidak boleh negatif; penukaran ditolak bila saldo kurang dari 50 poin.|
 
@@ -142,4 +142,12 @@ Berdasarkan kutipan wawancara:
 * Harga barang sering naik, sehingga nota lama sulit dicek (AB-04).
 * Stok di buku catatan kadang minus (AB-03).
 * Anggota lupa membawa kartu, sehingga dicari lewat NIM (AB-05).
+
+
+
+###### 11\. Relasi dan kardinalitas
+
+
+
+
 
