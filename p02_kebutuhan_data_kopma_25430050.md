@@ -50,13 +50,14 @@ Nota penjualan Kopma (Gambar 2.5), contoh No. PJ-2609-0142. Elemen data pada not
 
 |Entitas kandidat|Elemen data utama|Sumber|
 |-|-|-|
-|Anggota|nomor anggota, NIM, nama, program studi, nomor HP, status aktif|Formulir pendaftaran|
-|Barang|kode, nama, kategori, harga jual, stok, batas minimum stok|Daftar barang, faktur|
-|Penjualan|nomor nota, tanggal-jam, kasir, anggota (opsional), bayar|Nota penjualan|
-|Detail penjualan|nomor nota, barang, qty, harga saat transaksi|Nota penjualan|
-|Petugas|kode petugas, nama, peran (kasir/gudang/ketua)|Wawancara|
-|Pemasok|kode, nama, telepon, alamat|Faktur pemasok|
-|Pembelian dan detailnya|nomor faktur, tanggal, pemasok, barang, qty, harga beli|Faktur pemasok|
+|Anggota|id\_anggota (PK), nomor anggota (kunci alternatif), NIM (kunci alternatif), nama, program studi, nomor HP, status aktif, saldo pin (turunan)|Formulir pendaftaran|
+|Barang|id\_barang (PK), kode (kunci alternatif), nama, kategori, harga jual, stok, batas minimum stok|Daftar barang, faktur|
+|Penjualan|id\_penjualan (PK), nomor nota (kunci alternatif), tanggal-jam, kasir, anggota (opsional), bayar, poin diperoleh (turunan), poin ditukar, potongan dari poin (Rp) (turunan)|Nota penjualan|
+|Detail penjualan|id\_penjualan (PK), barang (PK), qty, harga saat transaksi|Nota penjualan|
+|Petugas|id\_petugas (PK), kode petugas (kunci alternatif), nama, peran (kasir/gudang/ketua)|Wawancara|
+|Pemasok|id\_pemasok (PK), kode (kunci alternatif), nama, telepon, alamat|Faktur pemasok|
+|Pembelian|id\_pembelian (PK), nomor faktur (kunci alternatif), tanggal, pemasok|Faktur pemasok|
+|Detail pembelian|id\_pembelian (PK), barang (PK), qty, harga beli|Faktur pemasok|
 
 ###### 
 
@@ -72,6 +73,9 @@ Nota penjualan Kopma (Gambar 2.5), contoh No. PJ-2609-0142. Elemen data pada not
 |AB-04|Harga jual yang dipakai pada nota disimpan per baris dan tidak berubah meski harga barang kemudian naik.|
 |AB-05|NIM anggota unik; pencarian anggota dapat dilakukan lewat nomor anggota atau NIM.|
 |AB-06|Pesanan pembelian dibuat bila stok kurang dari batas minimum barang tersebut.|
+|<br />AB-07|Anggota aktif memperoleh 1 poin untuk setiap kelipatan Rp10.000 belanja pada nota; sisa di bawah Rp10.000 tidak dihitung. Pembeli umum tidak memperoleh poin.|
+|AB-08|Setiap 50 poin dapat ditukar dengan potongan Rp5.000; penukaran hanya dalam kelipatan 50 poin.|
+|AB-09|Saldo poin tidak boleh negatif; penukaran ditolak bila saldo kurang dari 50 poin.|
 
 ###### 
 
@@ -85,6 +89,8 @@ Nota penjualan Kopma (Gambar 2.5), contoh No. PJ-2609-0142. Elemen data pada not
 |KI-02|Lima barang terlaris per bulan berdasarkan qty|Detail penjualan, barang|
 |KI-03|Barang dengan stok di bawah batas minimum|Barang|
 |KI-04|Sepuluh anggota dengan belanja terbesar per bulan|Penjualan, detail penjualan, anggota|
+|KI-05|Saldo poin setiap anggota|Anggota|
+|KI-06|Jumlah poin diperoleh dan ditukar per bulan|Penjualan, anggota|
 
 ###### 
 
@@ -95,7 +101,7 @@ Nota penjualan Kopma (Gambar 2.5), contoh No. PJ-2609-0142. Elemen data pada not
 |Proses|Anggota|Barang|Penjualan|Detail|Pemasok|Pembelian|
 |-|-|-|-|-|-|-|
 |PB-01 Daftar anggota|C||||||
-|PB-02 Catat penjualan|R|R, U|C|C|||
+|PB-02 Catat penjualan|R, U|R, U|C|C|||
 |PB-03 Pesan ke pemasok||R|||R|C|
 |PB-04 Terima barang||U|||R|U|
 |PB-05 Laporan bulanan|R|R|R|R||R|
