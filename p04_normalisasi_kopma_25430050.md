@@ -4,7 +4,7 @@ P04 Normalisasi Kopma
 
 NIM: 25430050
 
-Nama: Intan Aulia Nurwulan 
+Nama: Intan Aulia Nurwulan
 
 
 
@@ -48,7 +48,7 @@ D.2 Dependensi Fungsional
 
 
 
-Langkah 3: Daftar FD 
+Langkah 3: Daftar FD
 
 
 
@@ -274,4 +274,148 @@ Langkah 8: Pemeriksaan BCNF per table
 |ANGGOTA|tidak ada, penentunya no\_anggota dan nim\_anggota, keduanya kunci kandidat|memenuhi BNCF|
 
 
+
+E. Latihan dan Modifikasi
+
+
+
+E.1 Beberapa nomor telepon untuk setiap pemasok
+
+
+
+Relasi pemasok saat ini menyimpan satu nomor telepon per pemasok. Jika satu
+
+pemasok boleh punya beberapa nomor, telepon\_pemasok menjadi atribut
+
+bernilai banyak, dan itu melanggar 1NF.
+
+
+
+UNF (telepon menjadi grup berulang):
+
+
+
+PEMASOK\_UNF (id\_pemasok, nama\_pemasok, alamat\_pemasok,
+
+&#x20;            { telepon\_pemasok })
+
+
+
+1NF (satu baris untuk setiap nomor, kunci primer komposit):
+
+
+
+PEMASOK\_1NF (id\_pemasok (PK), telepon\_pemasok (PK),
+
+&#x20;            nama\_pemasok, alamat\_pemasok)
+
+
+
+2NF: nama\_pemasok dan alamat\_pemasok hanya bergantung pada sebagian kunci
+
+(id\_pemasok), sehingga dipisah. Pada relasi hasil pemisahan tidak ada lagi
+
+ketergantungan transitif, jadi 3NF juga terpenuhi.
+
+
+
+Relasi baru:
+
+
+
+PEMASOK (
+
+&#x20;   id\_pemasok (PK),
+
+&#x20;   nama\_pemasok,
+
+&#x20;   alamat\_pemasok
+
+)
+
+
+
+TELEPON\_PEMASOK (
+
+&#x20;   id\_pemasok (PK, FK),
+
+&#x20;   no\_telepon\_pemasok (PK)
+
+)
+
+
+
+E.2 Contoh data yang melanggar 3NF
+
+
+
+Andaikan nama\_anggota disimpan di tabel penjualan:
+
+
+
+PENJUALAN (no\_nota\_penjualan (PK), tgl\_penjualan, kode\_petugas,
+
+&#x20;          no\_anggota, nama\_anggota)
+
+
+
+Pelanggaran 3NF: ada rantai no\_nota\_penjualan -> no\_anggota -> nama\_anggota.
+
+nama\_anggota (bukan kunci) bergantung pada no\_anggota (bukan kunci).
+
+
+
+Contoh data (anggota A-001 muncul di tiga nota):
+
+
+
+| no\_nota\_penjualan | tgl\_penjualan | kode\_petugas | no\_anggota | nama\_anggota |
+
+|-------------------|---------------|--------------|------------|--------------|
+
+| PJ-2609-0001      | 2026-09-01    | P01          | A-001      | Budi Santoso |
+
+| PJ-2609-0002      | 2026-09-03    | P01          | A-001      | Budi Santoso |
+
+| PJ-2609-0003      | 2026-09-05    | P02          | A-001      | Budi Santoso |
+
+
+
+Kueri ubah yang memperlihatkan anomali. Budi mengganti ejaan namanya, tetapi
+
+hanya satu nota yang ikut diubah:
+
+
+
+sql
+
+UPDATE penjualan
+
+SET nama\_anggota = 'Budi Santosa'
+
+WHERE no\_nota\_penjualan = 'PJ-2609-0001';
+
+
+
+Hasilnya, anggota A-001 punya dua nama yang berbeda:
+
+
+
+sql
+
+SELECT no\_anggota, COUNT(DISTINCT nama\_anggota) AS jumlah\_nama
+
+FROM penjualan
+
+GROUP BY no\_anggota
+
+HAVING COUNT(DISTINCT nama\_anggota) > 1;
+
+
+
+Data menjadi tidak konsisten (anomali ubah). Agar benar, UPDATE harus
+
+mengubah semua baris dengan no\_anggota = 'A-001'. Jika nama\_anggota hanya
+
+disimpan di tabel anggota, cukup satu baris yang diubah.
 
