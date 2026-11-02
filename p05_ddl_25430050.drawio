@@ -1,0 +1,250 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="erd-toko-050" name="ERD toko_050">
+    <mxGraphModel dx="1406" dy="1230" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="admin" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" value="admin" vertex="1">
+          <mxGeometry height="134" width="300" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="admin_0" parent="admin" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK  id_admin : SMALLINT AI" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="admin_1" parent="admin" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="UK  kode_admin : CHAR(3)" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="admin_2" parent="admin" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="nama_admin : VARCHAR(100)" vertex="1">
+          <mxGeometry height="26" width="300" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="admin_3" parent="admin" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="peran_admin : ENUM(&#39;kasir&#39;,&#39;gudang&#39;,&#39;admin&#39;)" vertex="1">
+          <mxGeometry height="26" width="300" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="pelanggan" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" value="pelanggan" vertex="1">
+          <mxGeometry height="238" width="300" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="pelanggan_0" parent="pelanggan" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK  id_pelanggan : INT AI" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pelanggan_1" parent="pelanggan" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="UK  kode_pelanggan : CHAR(7)" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="pelanggan_2" parent="pelanggan" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="UK  email_pelanggan : VARCHAR(100)" vertex="1">
+          <mxGeometry height="26" width="300" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="pelanggan_3" parent="pelanggan" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="nama_pelanggan : VARCHAR(100)" vertex="1">
+          <mxGeometry height="26" width="300" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="pelanggan_4" parent="pelanggan" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="no_hp_pelanggan : VARCHAR(15) NULL" vertex="1">
+          <mxGeometry height="26" width="300" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="pelanggan_5" parent="pelanggan" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="alamat_pelanggan : VARCHAR(200) NULL" vertex="1">
+          <mxGeometry height="26" width="300" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="pelanggan_6" parent="pelanggan" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="status_aktif_pelanggan : ENUM(&#39;aktif&#39;,&#39;nonaktif&#39;)" vertex="1">
+          <mxGeometry height="26" width="300" y="186" as="geometry" />
+        </mxCell>
+        <mxCell id="pelanggan_7" parent="pelanggan" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="tgl_daftar_pelanggan : DATE" vertex="1">
+          <mxGeometry height="26" width="300" y="212" as="geometry" />
+        </mxCell>
+        <mxCell id="pesanan" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" value="pesanan" vertex="1">
+          <mxGeometry height="238" width="300" x="400" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pesanan_0" parent="pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK  id_pesanan : INT AI" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pesanan_1" parent="pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="UK  no_pesanan : CHAR(12)" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="pesanan_2" parent="pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="tanggal_jam_pesanan : DATETIME" vertex="1">
+          <mxGeometry height="26" width="300" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="pesanan_3" parent="pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="FK  id_admin : SMALLINT" vertex="1">
+          <mxGeometry height="26" width="300" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="pesanan_4" parent="pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="FK  id_pelanggan : INT" vertex="1">
+          <mxGeometry height="26" width="300" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="pesanan_5" parent="pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="alamat_tujuan_pesanan : VARCHAR(200)" vertex="1">
+          <mxGeometry height="26" width="300" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="pesanan_6" parent="pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="ongkos_kirim_pesanan : DECIMAL(12,2)" vertex="1">
+          <mxGeometry height="26" width="300" y="186" as="geometry" />
+        </mxCell>
+        <mxCell id="pesanan_7" parent="pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="potongan_pesanan : DECIMAL(12,2) DEF 6000" vertex="1">
+          <mxGeometry height="26" width="300" y="212" as="geometry" />
+        </mxCell>
+        <mxCell id="detail_pesanan" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" value="detail_pesanan" vertex="1">
+          <mxGeometry height="134" width="300" x="760" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="detail_pesanan_0" parent="detail_pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK,FK  id_pesanan : INT" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="detail_pesanan_1" parent="detail_pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK,FK  id_barang : INT" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="detail_pesanan_2" parent="detail_pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="qty_detail_pesanan : SMALLINT" vertex="1">
+          <mxGeometry height="26" width="300" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="detail_pesanan_3" parent="detail_pesanan" style="text;strokeColor=#d6b656;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="harga_satuan_detail_pesanan : DECIMAL(12,2)" vertex="1">
+          <mxGeometry height="26" width="300" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="barang" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" value="barang" vertex="1">
+          <mxGeometry height="212" width="300" x="1120" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="barang_0" parent="barang" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK  id_barang : INT AI" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="barang_1" parent="barang" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="UK  kode_barang : VARCHAR(10)" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="barang_2" parent="barang" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="nama_barang : VARCHAR(100)" vertex="1">
+          <mxGeometry height="26" width="300" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="barang_3" parent="barang" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="FK  id_kategori : INT" vertex="1">
+          <mxGeometry height="26" width="300" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="barang_4" parent="barang" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="harga_jual_barang : DECIMAL(12,2)" vertex="1">
+          <mxGeometry height="26" width="300" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="barang_5" parent="barang" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="stok_barang : INT DEF 0" vertex="1">
+          <mxGeometry height="26" width="300" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="barang_6" parent="barang" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="batas_minimum_stok : INT DEF 3" vertex="1">
+          <mxGeometry height="26" width="300" y="186" as="geometry" />
+        </mxCell>
+        <mxCell id="kategori" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#fad9d5;strokeColor=#ae4132;" value="kategori" vertex="1">
+          <mxGeometry height="82" width="300" x="1480" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kategori_0" parent="kategori" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK  id_kategori : INT AI" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kategori_1" parent="kategori" style="text;strokeColor=#6c8ebf;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="UK  nama_kategori : VARCHAR(50)" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="pembayaran" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#76608a;strokeColor=#432D57;fontColor=#ffffff;" value="pembayaran" vertex="1">
+          <mxGeometry height="212" width="300" x="400" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="pembayaran_0" parent="pembayaran" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK  id_pembayaran : INT AI" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pembayaran_1" parent="pembayaran" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="UK  no_pembayaran : VARCHAR(20)" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="pembayaran_2" parent="pembayaran" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="UK,FK  id_pesanan : INT" vertex="1">
+          <mxGeometry height="26" width="300" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="pembayaran_3" parent="pembayaran" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="metode_pembayaran : ENUM(&#39;Transfer&#39;,&#39;E-wallet&#39;)" vertex="1">
+          <mxGeometry height="26" width="300" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="pembayaran_4" parent="pembayaran" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="jumlah_bayar : DECIMAL(12,2)" vertex="1">
+          <mxGeometry height="26" width="300" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="pembayaran_5" parent="pembayaran" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="status_pembayaran : ENUM(&#39;Belum lunas&#39;,&#39;Lunas&#39;)" vertex="1">
+          <mxGeometry height="26" width="300" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="pembayaran_6" parent="pembayaran" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="tanggal_bayar : DATE" vertex="1">
+          <mxGeometry height="26" width="300" y="186" as="geometry" />
+        </mxCell>
+        <mxCell id="pengiriman" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#fa6800;strokeColor=#C73500;fontColor=#000000;" value="pengiriman" vertex="1">
+          <mxGeometry height="186" width="300" x="760" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="pengiriman_0" parent="pengiriman" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK  id_pengiriman : INT AI" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pengiriman_1" parent="pengiriman" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="UK  no_resi_pengiriman : VARCHAR(30)" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="pengiriman_2" parent="pengiriman" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="UK,FK  id_pesanan : INT" vertex="1">
+          <mxGeometry height="26" width="300" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="pengiriman_3" parent="pengiriman" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="status_kirim : VARCHAR(50)" vertex="1">
+          <mxGeometry height="26" width="300" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="pengiriman_4" parent="pengiriman" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="kurir : VARCHAR(50)" vertex="1">
+          <mxGeometry height="26" width="300" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="pengiriman_5" parent="pengiriman" style="text;strokeColor=#82b366;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="tanggal_kirim : DATE" vertex="1">
+          <mxGeometry height="26" width="300" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="pembelian" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" value="pembelian" vertex="1">
+          <mxGeometry height="160" width="300" x="1120" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="pembelian_0" parent="pembelian" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK  id_pembelian : INT AI" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pembelian_1" parent="pembelian" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="no_faktur_pembelian : VARCHAR(20)" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="pembelian_2" parent="pembelian" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="tgl_pembelian : DATE" vertex="1">
+          <mxGeometry height="26" width="300" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="pembelian_3" parent="pembelian" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="FK  id_pemasok : INT" vertex="1">
+          <mxGeometry height="26" width="300" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="pembelian_4" parent="pembelian" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="status_pembelian : ENUM(&#39;dipesan&#39;,&#39;diterima&#39;)" vertex="1">
+          <mxGeometry height="26" width="300" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="detail_pembelian" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#e6d0de;strokeColor=#996185;gradientColor=#d5739d;" value="detail_pembelian" vertex="1">
+          <mxGeometry height="134" width="300" x="1480" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="detail_pembelian_0" parent="detail_pembelian" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK,FK  id_pembelian : INT" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="detail_pembelian_1" parent="detail_pembelian" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK,FK  id_barang : INT" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="detail_pembelian_2" parent="detail_pembelian" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="qty_detail_pembelian : INT" vertex="1">
+          <mxGeometry height="26" width="300" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="detail_pembelian_3" parent="detail_pembelian" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="harga_beli_detail_pembelian : DECIMAL(12,2)" vertex="1">
+          <mxGeometry height="26" width="300" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="pemasok" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" value="pemasok" vertex="1">
+          <mxGeometry height="134" width="300" x="1120" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="pemasok_0" parent="pemasok" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;" value="PK  id_pemasok : INT AI" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pemasok_1" parent="pemasok" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="UK  nama_pemasok : VARCHAR(100)" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="pemasok_2" parent="pemasok" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="telepon_pemasok : VARCHAR(15) NULL" vertex="1">
+          <mxGeometry height="26" width="300" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="pemasok_3" parent="pemasok" style="text;strokeColor=#b85450;fillColor=#ffffff;align=left;verticalAlign=middle;spacingLeft=8;whiteSpace=wrap;html=1;fontSize=11;" value="alamat_pemasok : VARCHAR(200) NULL" vertex="1">
+          <mxGeometry height="26" width="300" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="1" source="admin" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERmandOne;endArrow=ERzeroToMany;startFill=0;endFill=0;strokeWidth=1.5;" target="pesanan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="pelanggan" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERmandOne;endArrow=ERzeroToMany;startFill=0;endFill=0;strokeWidth=1.5;" target="pesanan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="kategori" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERmandOne;endArrow=ERzeroToMany;startFill=0;endFill=0;strokeWidth=1.5;" target="barang">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="pesanan" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERmandOne;endArrow=ERzeroToMany;startFill=0;endFill=0;strokeWidth=1.5;" target="detail_pesanan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="barang" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERmandOne;endArrow=ERzeroToMany;startFill=0;endFill=0;strokeWidth=1.5;" target="detail_pesanan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="pesanan" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERmandOne;endArrow=ERzeroToOne;startFill=0;endFill=0;strokeWidth=1.5;" target="pembayaran">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="pesanan" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERmandOne;endArrow=ERzeroToOne;startFill=0;endFill=0;strokeWidth=1.5;" target="pengiriman">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="pemasok" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERmandOne;endArrow=ERzeroToMany;startFill=0;endFill=0;strokeWidth=1.5;" target="pembelian">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="pembelian" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERmandOne;endArrow=ERzeroToMany;startFill=0;endFill=0;strokeWidth=1.5;" target="detail_pembelian">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="barang" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=ERmandOne;endArrow=ERzeroToMany;startFill=0;endFill=0;strokeWidth=1.5;" target="detail_pembelian">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
