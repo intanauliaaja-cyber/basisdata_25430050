@@ -70,3 +70,28 @@ SELECT id_barang, qty_detail_penjualan, harga_satuan_detail_penjualan,
 FROM detail_penjualan
 WHERE id_penjualan = 1
 ORDER BY id_barang;
+
+-- ===== E. Latihan dan Modifikasi =====
+
+-- E.1 Pertanyaan: tampilkan nama barang huruf kapital dan harga berformat Rupiah.
+-- Harapan: 4 baris; nama semua huruf besar (mis. PULPEN GEL 0.5);
+--          harga berbentuk "Rp4.000" (titik sebagai pemisah ribuan).
+SELECT UPPER(nama_barang) AS nama,
+       CONCAT('Rp', FORMAT(harga_jual_barang, 0, 'id_ID')) AS harga
+FROM barang
+ORDER BY nama_barang;
+
+-- E.2 (SALAH SEMANTIK) Maksud: barang ATK atau makanan yang stoknya di bawah minimum.
+-- Harapan seharusnya: 1 baris saja, Roti Cokelat.
+-- Kueri ini tanpa kurung, jadi AND dievaluasi dulu: semua ATK ikut muncul.
+SELECT kode_barang, nama_barang, kategori_barang, stok_barang, stok_min_barang
+FROM barang
+WHERE kategori_barang = 'ATK' OR kategori_barang = 'makanan'
+      AND stok_barang < stok_min_barang;
+
+-- E.2 (PERBAIKAN) pakai tanda kurung
+-- Harapan: 1 baris, Roti Cokelat (stok 6 dari minimum 10).
+SELECT kode_barang, nama_barang, kategori_barang, stok_barang, stok_min_barang
+FROM barang
+WHERE (kategori_barang = 'ATK' OR kategori_barang = 'makanan')
+      AND stok_barang < stok_min_barang;
